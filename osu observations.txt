@@ -1,0 +1,22 @@
+In-Game Layers:
+ - user cursor
+ - gui layer
+   - score, health, key thing, song duration circle
+ - playspace
+   - kiai shading
+   - accuracy numbers
+   - approach circle
+   - sliderball
+   - hit circle numbers/dots / slider ticks
+   - hit circles/sliders
+   - hit circle overlay
+   - comboburst
+   - storyboard
+     - custom user sprites
+     - storyboard bg
+   - video (optional)
+   - static image background
+Fail/Pause Screen Layers:
+ - Menu options
+ - full-screen shader
+ - In-game static image background

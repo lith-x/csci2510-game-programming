@@ -1,0 +1,25 @@
+Hue Maze
+
+Reference:
+ - The mobile game "I Love Hue" is a game where you organize a whole bunch of
+   squares in a perfect color gradient, using very few already-arranged squares
+   as reference (each correct one usually being in a corner, the rest being
+   scattered).
+
+
+Functional ideas:
+ - Start at the beginning with a color, you are presented a different color in
+   each cardinal direction, click the correct one (the square that properly
+   gradients from [current square] to [end square]) to proceed down a the correct
+   path towards the end square.
+ - Three or five strikes results in a reset.
+ - NO TIME LIMIT PLEASE
+
+ - Primary: use WASD/arrow keys to navigate which direction the maze is.
+   Secondary: use the mouse to click on the squares.
+
+Extra:
+ - Once a person reaches the end, populate the rest of the grid with a
+   generated maze of gradients that are different from the actual end-color.
+   It'd be a cool visual effect. Not functionally necessary. Only work on it
+   if there's time to.
