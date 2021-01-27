@@ -1,4 +1,8 @@
-const cvs = document.querySelector("canvas") as HTMLCanvasElement;
+// this is basically a quick dirty script i know it's bad
+
+const cvs = document.createElement("canvas");
+document.body.appendChild(cvs);
+
 const cvsWIDTH = 500;
 const cvsHEIGHT = 500;
 cvs.width = cvsWIDTH;
@@ -23,5 +27,8 @@ for (let i = 0; i < sqNUM; i++) {
 
 ctx.font = "50pt Arial";
 ctx.lineWidth = 1.25;
-ctx.fillText("colors weeeeeeee", 10, cvsHEIGHT / 2);
-ctx.strokeText("colors weeeeeeee", 10, cvsHEIGHT / 2);
+const mytext = "colors weeeeeeee";
+const mytextX = 10;
+const mytextY = cvsHEIGHT / 2;
+ctx.fillText(mytext, mytextX, mytextY);
+ctx.strokeText(mytext, mytextX, mytextY);

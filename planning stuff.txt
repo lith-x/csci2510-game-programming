@@ -1,0 +1,51 @@
+play screen:
+component tree:
+(do we count the screen itself as the base?)
+- info ui
+  - strikes
+  - level number
+- menu buttons
+  - settings
+  - level select
+- game grid
+  - squares (all of them, like a 2d array?)
+    - square state overlay
+layers:
+  - background
+  - ui
+    - strikes
+    - level number
+    - level select button
+    - settings button
+  - squares
+  - square overlays
+  - other pizzazz/shader stuff (tbd)
+
+
+title screen:
+component tree:
+- menu buttons
+  - play (level select)
+  - settings (necessary?)
+layers:
+- background
+- menu button(s)
+
+
+(note: this should be an "extra" thing. do this only if there's time.
+    skip it and go straight into gameplay for early iterations.)
+level select:
+component tree:
+- game title
+- level grid
+  - clusters (1 - 9) ("expand" once clicked)
+    - levels (1 - 9)
+  - "selected" highlight underlay
+- settings button
+layers:
+- background
+- game name
+- screen buttons
+  - settings / "back" (if in level select [not cluster select])
+- selected cluster/level highlight
+- level visual (shape/actual level number)
