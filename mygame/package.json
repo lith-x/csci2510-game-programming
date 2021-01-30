@@ -1,0 +1,15 @@
+{
+  "name": "mygame",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "aaron zandt",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  }
+}
