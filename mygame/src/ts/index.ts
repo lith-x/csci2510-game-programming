@@ -1,13 +1,6 @@
 import Rectangle from "./objects/Rectangle";
 import Circle from "./objects/Circle";
-import DrawLayer from "./objects/DrawLayer";
-
-enum Layers {
-    Background = 0,
-    Midground,
-    Foreground,
-    GUI
-}
+import DrawLayer, { Layers } from "./objects/DrawLayer";
 
 
 const clearScreen = (ctx: CanvasRenderingContext2D) => {
@@ -17,7 +10,7 @@ const clearScreen = (ctx: CanvasRenderingContext2D) => {
 
 const drawloop = (ctx: CanvasRenderingContext2D, layers: DrawLayer[]) => {
     layers.forEach(layer =>
-        layer.drawables.forEach(drawable => 
+        layer.drawables.forEach(drawable =>
             drawable.draw(ctx)
         )
     );
