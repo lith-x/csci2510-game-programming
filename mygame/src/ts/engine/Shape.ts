@@ -1,7 +1,7 @@
 import chroma from "chroma-js";
-import IDrawable from "./IDrawable";
+import IGameObject from "./IGameObject";
 
-export default abstract class Shape implements IDrawable{
+export default abstract class Shape implements IGameObject {
     public x: number;
     public y: number;
     public width: number;
@@ -20,23 +20,13 @@ export default abstract class Shape implements IDrawable{
         this.stroke = val;
     }
 
-    get cx() {
-        return this.x + this.width / 2;
-    }
-    set cx(val: number) {
-        this.x = val - this.width / 2;
-    }
+    get cx() { return this.x + this.width / 2; }
+    set cx(val: number) { this.x = val - this.width / 2; }
 
-    get cy() {
-        return this.y + this.height / 2;
-    }
-    set cy(val: number) {
-        this.y = val - this.height / 2;
-    }
+    get cy() { return this.y + this.height / 2; }
+    set cy(val: number) { this.y = val - this.height / 2; }
 
-    get scale() {
-        return this.xscale;
-    }
+    get scale() { return this.xscale; }
     set scale(val: number) {
         this.xscale = val;
         this.yscale = val;
@@ -50,7 +40,7 @@ export default abstract class Shape implements IDrawable{
         this.height = height;
     }
 
-    draw(ctx: CanvasRenderingContext2D) {
+    public draw(ctx: CanvasRenderingContext2D) {
         ctx.fillStyle = this.fill.css();
         ctx.strokeStyle = this.stroke.css();
         ctx.translate(this.x, this.y);
@@ -60,10 +50,7 @@ export default abstract class Shape implements IDrawable{
         ctx.resetTransform();
     }
 
-    move(delX: number, delY: number) {
-        this.x += delX;
-        this.y += delY;
-    }
+    public update() {}
 
     protected abstract defineDraw(ctx: CanvasRenderingContext2D): void;
 }
