@@ -1,5 +1,5 @@
 import FirstScene from "./game/FirstScene";
-import RedRectangle from "./game/RedRectangle";
+import Rectangle from "./game/Rectangle";
 
 
 const clearScreen = (ctx: CanvasRenderingContext2D) => {
@@ -13,10 +13,10 @@ const main = () => {
     const ctx = cvs.getContext("2d");
 
     const firstScene = new FirstScene();
-    const red = new RedRectangle();
+    const red = new Rectangle("red");
     firstScene.children.push(red);
 
-    const red2 = new RedRectangle();
+    const red2 = new Rectangle("blue");
     red2.x += 100;
     red2.y += 100;
     firstScene.children.push(red2);
@@ -27,7 +27,7 @@ const main = () => {
         firstScene.update();
     }
 
-    setInterval(gameLoop, 144 / 1000);
+    setInterval(gameLoop, 1000 / 144);
 };
 
 main();

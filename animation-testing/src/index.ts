@@ -7,7 +7,7 @@ class Rectangle {
     public h: number;
     public hue = 0;
     public angle = 0;
-    private _rotatespeed = 0.01;
+    private _rotatespeed = 0.005;
 
     constructor(x: number, y: number, w: number, h: number) {
         this.x = x;
@@ -23,6 +23,7 @@ class Rectangle {
         ctx.fillRect(-this.w / 2, -this.h / 2, this.w, this.h);
         ctx.resetTransform();
     }
+
     update() {
         this.hue += 1;
         this.hue %= 360;
@@ -38,11 +39,14 @@ const ctx = cvs.getContext("2d");
 const rect = new Rectangle(cvs.width / 2, cvs.height / 2, 200, 200);
 
 const draw = () => {
-    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    ctx.fillStyle = "black";
+    ctx.globalAlpha = 0.04;
+    ctx.fillRect(0, 0, cvs.width, cvs.height);
+    ctx.globalAlpha = 1;
     rect.draw(ctx);
     rect.update();
     // window.requestAnimationFrame(draw); <- janky
 }
 
-setInterval(draw, 10); // <- less janky
-//draw();
+setInterval(draw, 1000 / 144); // <- less janky
+// draw();
