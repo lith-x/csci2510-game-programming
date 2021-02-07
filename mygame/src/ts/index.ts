@@ -1,12 +1,10 @@
 import FirstScene from "./game/FirstScene";
 import Rectangle from "./game/Rectangle";
 
-
 const clearScreen = (ctx: CanvasRenderingContext2D) => {
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "black";
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 };
-
 
 const main = () => {
     const cvs = document.querySelector("canvas");
@@ -16,10 +14,10 @@ const main = () => {
     const red = new Rectangle("red");
     firstScene.children.push(red);
 
-    const red2 = new Rectangle("blue");
-    red2.x += 100;
-    red2.y += 100;
-    firstScene.children.push(red2);
+    const blue = new Rectangle("blue");
+    blue.x += 100;
+    blue.y += 100;
+    firstScene.children.push(blue);
 
     const gameLoop = () => {
         clearScreen(ctx);

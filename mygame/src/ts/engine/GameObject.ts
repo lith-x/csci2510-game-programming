@@ -10,14 +10,14 @@ export default abstract class GameObject {
     update() {
         this.components.forEach(c => {
             if (c instanceof UpdateComponent)
-                c.update()
+                c.update();
         });
     }
 
     draw(ctx: CanvasRenderingContext2D) {
         this.components.forEach(c => {
             if (c instanceof DrawComponent)
-                c.draw(ctx)
+                c.draw(ctx);
         });
     }
 }

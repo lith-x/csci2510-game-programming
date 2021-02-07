@@ -1,5 +1,5 @@
-import GameObject from "../../engine/GameObject";
 import chroma from "chroma-js";
+import GameObject from "../../engine/GameObject";
 import DrawComponent from "../../engine/DrawComponent";
 
 export default class RectDrawComponent extends DrawComponent {
