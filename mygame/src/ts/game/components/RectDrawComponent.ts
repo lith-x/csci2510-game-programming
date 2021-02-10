@@ -4,6 +4,7 @@ import DrawComponent from "../../engine/DrawComponent";
 
 export default class RectDrawComponent extends DrawComponent {
     public color: chroma.Color;
+
     constructor(gameObject: GameObject, color: string) {
         super(gameObject);
         this.color = chroma(color);
