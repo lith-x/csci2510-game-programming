@@ -1,7 +1,5 @@
-import { SceneManager } from "./engine";
-import { AllComponents } from "./game/components";
-import { AllPrefabs } from "./game/prefabs";
-import { AllScenes } from "./game/scenes";
+import { Input, SceneManager } from "./engine";
+import { AllComponents, AllPrefabs, AllScenes } from "./game";
 
 const clearScreen = (ctx: CanvasRenderingContext2D) => {
     ctx.fillStyle = "black";
@@ -10,20 +8,27 @@ const clearScreen = (ctx: CanvasRenderingContext2D) => {
 
 const gameLoop = (ctx: CanvasRenderingContext2D) => {
     clearScreen(ctx);
+    Input.SwapArrays();
     SceneManager.current.draw(ctx);
     SceneManager.current.update();
-}
+    SceneManager.current.cullDestroyed();
+};
 
 const main = () => {
     const cvs = document.querySelector("canvas");
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
     const ctx = cvs.getContext("2d");
+
+    Input.attach(document);
 
     SceneManager.addComponent(...AllComponents);
     SceneManager.addPrefab(...AllPrefabs);
     SceneManager.addScene(...AllScenes);
-    SceneManager.changeScene("FirstScene");
+    SceneManager.changeScene("MainScene");
 
-    setInterval(gameLoop, 1000 / 144, ctx);
+    const deltaT = 1000 / 60;
+    setInterval(gameLoop, deltaT, ctx);
 };
 
 main();

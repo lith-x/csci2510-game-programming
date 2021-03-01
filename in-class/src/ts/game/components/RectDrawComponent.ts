@@ -1,10 +1,7 @@
 import chroma from "chroma-js";
-import GameObject from "../../engine/GameObject";
-import DrawComponent from "../../engine/DrawComponent";
+import { DrawComponent, GameObject } from "../../engine";
 
-export default class RectDrawComponent extends DrawComponent {
-    public color: chroma.Color;
-
+export class RectDrawComponent extends DrawComponent {
     constructor(gameObject: GameObject, color: string) {
         super(gameObject);
         this.color = chroma(color);
