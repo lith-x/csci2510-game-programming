@@ -1,4 +1,5 @@
 import { SceneManager } from "./SceneManager";
+import { KeyDict, MouseDict } from "./Types";
 import { Vector2 } from "./Vector2";
 
 const INPUT_DEBUG = false;

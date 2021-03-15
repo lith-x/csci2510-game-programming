@@ -31,4 +31,4 @@ const main = () => {
     setInterval(gameLoop, deltaT, ctx);
 };
 
-main();
+window.addEventListener("load", main);

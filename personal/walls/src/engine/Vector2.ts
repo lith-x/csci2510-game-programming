@@ -4,6 +4,11 @@ export class Vector2 {
 
     public get length() { return Math.sqrt(this.x * this.x + this.y * this.y); }
 
+    constructor();
+    constructor(v: Vector2);
+    constructor(arr: [x: number, y: number]);
+    constructor(xy: number);
+    constructor(x: number, y: number);
     constructor(one?: Vector2 | [x: number, y: number] | number, two?: number) {
         if (!one) return;
 

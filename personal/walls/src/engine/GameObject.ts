@@ -1,6 +1,7 @@
 import { Component, DrawComponent, UpdateComponent } from "./Component";
 import { Scene } from "./Scene";
 import { SceneManager } from "./SceneManager";
+import { GameObjectProps } from "./Types";
 import { Vector2 } from "./Vector2";
 
 export class GameObject {
@@ -83,7 +84,7 @@ export class GameObject {
 
     callMethod(name: string, ...args: any[]) {
         for (const comp of this.components) {
-            if (comp[name] && typeof comp[name] === "function")
+            if (comp[name])
                 comp[name](...args);
         }
 
